@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: darshans-astrology-world
+    runtime: node
+    plan: free
+    buildCommand: echo "No third-party packages required"
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GOOGLE_TRANSLATE_API_KEY
+        sync: false
+      - key: PROKERALA_CLIENT_ID
+        sync: false
+      - key: PROKERALA_CLIENT_SECRET
+        sync: false
